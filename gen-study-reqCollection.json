@@ -1,0 +1,405 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2022-02-13T13:03:30.068Z",
+    "__export_source": "insomnia.desktop.app:v2021.7.2",
+    "resources": [
+        {
+            "_id": "req_7235dd18ea9e4bddb4965c9cace4bfdb",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644756745825,
+            "created": 1644756680596,
+            "url": "http://localhost:8080/loginForm",
+            "name": "08-loginForm",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/x-www-form-urlencoded",
+                "params": [
+                    {
+                        "id": "pair_c6694f6830d2446280ef77a70b08cf4f",
+                        "name": "user",
+                        "value": "manu",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_16d7013dc3c14231bec963985e011667",
+                        "name": "password",
+                        "value": "1234",
+                        "description": ""
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/x-www-form-urlencoded",
+                    "id": "pair_d3d1fba2b87145e695e87e04e9fd92f3"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1644756680596,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "parentId": null,
+            "modified": 1644734328471,
+            "created": 1644734328471,
+            "name": "gin-study",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_3ca44d36635c4778bd40d8826bfe665e",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644756706816,
+            "created": 1644756552444,
+            "url": "http://localhost:8080/loginXML",
+            "name": "08-loginXML",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/xml",
+                "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n <root>\n    <user>manu</user>\n    <password>123</password>\n</root>"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/xml",
+                    "id": "pair_5d67eec73cb04837a22bab523c5c7fd0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1644756552444,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2b3c095ee05b457186dd8c1d38a8c30f",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644756583634,
+            "created": 1644756414372,
+            "url": "http://localhost:8080/loginJSON",
+            "name": "08-loginJSON",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"user\": \"manu\",\n  \"password\": \"123\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json",
+                    "id": "pair_0804ea91701243868259dabfefcc227a"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1644756414421,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_8c2f43d2a69347e6a2866b8a64b1ddbd",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644756461816,
+            "created": 1644738098948,
+            "url": "",
+            "name": "04-upload",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "id": "pair_2f7e8e1da91b4328bd8a5d0714ed39ca",
+                        "name": "file",
+                        "value": "",
+                        "description": "",
+                        "type": "file",
+                        "fileName": "C:\\Downloads\\apache-zookeeper-3.7.0-bin\\docs\\images\\2pc.jpg"
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data",
+                    "id": "pair_cacd8abc58fa4c2f9600f8d5e6f701c5"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1644738098948,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_2ab2653015f54f47ba2b42679e0f0722",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644737567644,
+            "created": 1644737505096,
+            "url": "http://localhost:8080/post?ids[a]=1234&ids[b]=hello",
+            "name": "03-map",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "id": "pair_6b68f10917f84722b712893390426bd4",
+                        "name": "names[first]",
+                        "value": "thinkerou",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_b3dc30fbe3d042c1a62d6e1b6069bccd",
+                        "name": "names[second]",
+                        "value": "tianou",
+                        "description": ""
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data",
+                    "id": "pair_b30693f3f07843ada40fea9a2182a406"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1644737505096,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_b02edcb02d80475d933502a34c30887c",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644737456285,
+            "created": 1644737370965,
+            "url": "http://localhost:8080/form_post",
+            "name": "03-Multipart/Urlencoded Form",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "multipart/form-data",
+                "params": [
+                    {
+                        "id": "pair_98eeb911b7174d27af462edb94460503",
+                        "name": "message",
+                        "value": "hi",
+                        "description": ""
+                    },
+                    {
+                        "id": "pair_ff868f0588934a6d93fcb6f604961380",
+                        "name": "",
+                        "value": "",
+                        "description": ""
+                    }
+                ]
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/form-data",
+                    "id": "pair_f253246a8f074e1bb29a4ef022eaf887"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1644737370965,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ba79d817bbfd414085c25b392b33b0a6",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644737179206,
+            "created": 1644737150951,
+            "url": "http://localhost:8080/welcome?firstname=Jane&lastname=Doe",
+            "name": "03-query",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1644737150951,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_da30c0730697436b8628d7a29a1684e0",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644737107864,
+            "created": 1644735269657,
+            "url": "http://localhost:8080/user/john/2",
+            "name": "02-user4",
+            "description": "",
+            "method": "POST",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1644735269657,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_eff21787cc774033b72dd8ed55dccc84",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644737116220,
+            "created": 1644735051247,
+            "url": "http://localhost:8080/user/john/2",
+            "name": "02-user2",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1644735051247,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_acbd7f4c9a7545b4956299a97ace50a8",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644737132490,
+            "created": 1644734957216,
+            "url": "http://localhost:8080/user/john",
+            "name": "02-user1",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1644735004256.5,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_47de7ce63c314e19ae861f0bdba2a1ee",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644737095266,
+            "created": 1644734343047,
+            "url": "http://localhost:8080/ping",
+            "name": "01-ping",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [],
+            "authentication": {},
+            "metaSortKey": -1644734957266,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_86511d211af443f1a497f77e487ac1d7fe23d3e6",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644734328481,
+            "created": 1644734328481,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1644734328481,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_86511d211af443f1a497f77e487ac1d7fe23d3e6",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644734328483,
+            "created": 1644734328483,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_278306670aa6463b9310e348a9044815",
+            "parentId": "wrk_4b14f7c69e0c42be80118455e2215e71",
+            "modified": 1644734328472,
+            "created": 1644734328472,
+            "fileName": "gin-study",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        }
+    ]
+}
