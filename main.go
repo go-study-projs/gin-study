@@ -1,31 +1,40 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 func main() {
 	router := gin.Default()
-	// 定义一个Get类型的服务接口
-	// 可以匹配 /user/john，但是不能匹配 /user/ 和 /user 请求
-	router.GET("/user/:name", func(c *gin.Context) {
-		name := c.Param("name")
-		c.String(http.StatusOK, "Hello %s", name)
+
+	router.GET("/welcome", func(c *gin.Context) {
+		firstname := c.DefaultQuery("firstname", "Guest")
+		lastname := c.Query("lastname")
+
+		c.String(http.StatusOK, "Hello %s %s", firstname, lastname)
 	})
 
-	// 可以匹配 /user/john/ 和 /user/john/send
-	router.GET("/user/:name/*action", func(c *gin.Context) {
-		name := c.Param("name")
-		action := c.Param("action")
-		message := name + " is " + action
-		c.String(http.StatusOK, message)
+	router.POST("/form_post", func(c *gin.Context) {
+		message := c.PostForm("message")
+		nick := c.DefaultPostForm("nick", "anonymous")
+
+		c.JSON(200, gin.H{
+			"status":  "posted",
+			"message": message,
+			"nick":    nick,
+		})
 	})
 
-	// 对于每个匹配的请求，上下文将保存路由定义
-	router.POST("/user/:name/*action", func(c *gin.Context) {
-		b := c.FullPath() == "/user/:name/*action" // true
-		c.String(http.StatusOK, "b is true? : %v", b)
+	router.POST("/post", func(c *gin.Context) {
+
+		ids := c.QueryMap("ids")
+		names := c.PostFormMap("names")
+
+		fmt.Printf("ids: %v; names: %v", ids, names)
+
+		c.String(http.StatusOK, "ids: %v; names: %v", ids, names)
 	})
 
 	router.Run(":8080")
