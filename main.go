@@ -1,28 +1,97 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
-	"log"
-	"net/http"
 )
 
 func main() {
 	router := gin.Default()
+	// 分组 v1
+	v1 := router.Group("/v1")
+	{
+		v1.POST("/login", loginEndpoint)
+		v1.POST("/submit", submitEndpoint)
+		v1.POST("/send", sendEndpoint)
+		v1.POST("/aaa", aaaaEndpoint)
+		v1.POST("/bbb", bbbbEndpoint)
+		v1.POST("/ccc", ccccEndpoint)
+		v1.POST("/ddd", ddddEndpoint)
+	}
 
-	// 为 multipart forms 类型设置一个较低的内存缓存 (默认是 32 MiB)
-	router.MaxMultipartMemory = 8 << 20 // 8 MiB
-	router.POST("/upload", func(c *gin.Context) {
-		// 单文件
-		file, _ := c.FormFile("file")
-		log.Println(file.Filename)
+	// 分组 v2
+	v2 := router.Group("/v2")
+	{
+		v2.POST("/login", loginEndpoint2)
+		v2.POST("/submit", submitEndpoint2)
+		v2.POST("/send", sendEndpoint2)
+		v2.POST("/aaa", aaaaEndpoint2)
+		v2.POST("/bbb", bbbbEndpoint2)
+		v2.POST("/ccc", ccccEndpoint2)
+		v2.POST("/ddd", ddddEndpoint2)
 
-		// 保存上传文件到目标目录
-		//dst := "C:\\dst.jpg"
-		c.SaveUploadedFile(file, file.Filename)
-
-		c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", file.Filename))
-	})
+	}
+	v2Path := v2.Group("/path")
+	v2Path.POST("/aaa", ddddEndpoint3)
 
 	router.Run(":8080")
+}
+
+func ddddEndpoint3(context *gin.Context) {
+
+}
+
+func ddddEndpoint2(context *gin.Context) {
+
+}
+
+func ccccEndpoint2(context *gin.Context) {
+
+}
+
+func bbbbEndpoint2(context *gin.Context) {
+
+}
+
+func aaaaEndpoint2(context *gin.Context) {
+
+}
+
+func sendEndpoint2(context *gin.Context) {
+
+}
+
+func submitEndpoint2(context *gin.Context) {
+
+}
+
+func loginEndpoint2(context *gin.Context) {
+
+}
+
+func ddddEndpoint(context *gin.Context) {
+
+}
+
+func ccccEndpoint(context *gin.Context) {
+
+}
+
+func bbbbEndpoint(context *gin.Context) {
+
+}
+
+func aaaaEndpoint(context *gin.Context) {
+
+}
+
+func sendEndpoint(context *gin.Context) {
+
+}
+
+func submitEndpoint(context *gin.Context) {
+
+}
+
+func loginEndpoint(context *gin.Context) {
+
 }
