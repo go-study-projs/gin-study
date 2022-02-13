@@ -1,23 +1,31 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
-	"io"
-	"os"
+	"time"
 )
 
 func main() {
-	// 不启动颜色控制
-	gin.DisableConsoleColor()
+	router := gin.New()
+	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 
-	// 创建日志文件
-	f, _ := os.Create("gin.log")
-	gin.DefaultWriter = io.MultiWriter(f)
+		// 自定义日志输出格式
+		return fmt.Sprintf("%s - [%s] \"%s %s %s %d %s \"%s\" %s\"\n",
+			param.ClientIP,
+			param.TimeStamp.Format(time.RFC3339Nano),
+			param.Method,
+			param.Path,
+			param.Request.Proto,
+			param.StatusCode,
+			param.Latency,
+			param.Request.UserAgent(),
+			param.ErrorMessage,
+		)
+	}))
+	// 应用崩溃恢复中间件
+	router.Use(gin.Recovery())
 
-	// 使用如下代码，可以实现日志文件记录和 console 同步显示
-	// gin.DefaultWriter = io.MultiWriter(f, os.Stdout)
-
-	router := gin.Default()
 	router.GET("/ping", func(c *gin.Context) {
 		c.String(200, "pong")
 	})
