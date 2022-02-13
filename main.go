@@ -3,38 +3,25 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"log"
 	"net/http"
 )
 
 func main() {
 	router := gin.Default()
 
-	router.GET("/welcome", func(c *gin.Context) {
-		firstname := c.DefaultQuery("firstname", "Guest")
-		lastname := c.Query("lastname")
+	// 为 multipart forms 类型设置一个较低的内存缓存 (默认是 32 MiB)
+	router.MaxMultipartMemory = 8 << 20 // 8 MiB
+	router.POST("/upload", func(c *gin.Context) {
+		// 单文件
+		file, _ := c.FormFile("file")
+		log.Println(file.Filename)
 
-		c.String(http.StatusOK, "Hello %s %s", firstname, lastname)
-	})
+		// 保存上传文件到目标目录
+		//dst := "C:\\dst.jpg"
+		c.SaveUploadedFile(file, file.Filename)
 
-	router.POST("/form_post", func(c *gin.Context) {
-		message := c.PostForm("message")
-		nick := c.DefaultPostForm("nick", "anonymous")
-
-		c.JSON(200, gin.H{
-			"status":  "posted",
-			"message": message,
-			"nick":    nick,
-		})
-	})
-
-	router.POST("/post", func(c *gin.Context) {
-
-		ids := c.QueryMap("ids")
-		names := c.PostFormMap("names")
-
-		fmt.Printf("ids: %v; names: %v", ids, names)
-
-		c.String(http.StatusOK, "ids: %v; names: %v", ids, names)
+		c.String(http.StatusOK, fmt.Sprintf("'%s' uploaded!", file.Filename))
 	})
 
 	router.Run(":8080")
